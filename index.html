@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab|delta</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Centered Container -->
+    <div class="container mt-5" style="max-width: 500px">
+      <h2 class="mb-4">Delta Lab Profile</h2>
+
+      <form id="profileForm">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Name</label>
+          <input id="nameInput" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label for="favoriteInput" class="form-label">Favorite</label>
+          <select id="favoriteInput" class="form-select">
+            <option>Select favorite!</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="commentInput" class="form-label">Comments</label>
+          <textarea id="commentInput" class="form-control"></textarea>
+        </div>
+
+        <!-- Pretty Blue Button -->
+        <button id="btnCreateProfile" class="btn btn-primary w-100">
+          Create My Profile
+        </button>
+      </form>
+
+      <!-- Result Display Section -->
+      <div
+        id="profileDisplay"
+        class="card p-4 shadow-sm"
+        style="display: none; margin-top: 20px"
+      >
+        <h3 class="text-center">My Profile 🐶</h3>
+        <p><strong>Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Favorite ID:</strong> <span id="displayFavorite"></span></p>
+        <p><strong>Comment:</strong> <span id="displayComment"></span></p>
+        <div class="text-center">
+          <img
+            id="displayDogPic"
+            src=""
+            alt="Random Dog"
+            class="img-fluid rounded"
+            style="max-height: 250px"
+          />
+        </div>
+
+        <button id="btnClearSession" class="btn btn-outline-danger w-100 mt-3">
+          Clear Session
+        </button>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
