@@ -1,17 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Coffee",
-    "emoji": "☕"
+    "phrase": "Dip out",
+    "meaning": "To leave a place, usually early or suddenly.",
+    "tag": "Slang",
+    "date": "Sept 17",
+    "memorized": false
   },
   {
     "id": 2,
-    "name": "Pizza",
-    "emoji": "🍕"
+    "phrase": "Call it a day",
+    "meaning": "To stop working on something.",
+    "tag": "Daily Life",
+    "date": "Sept 16",
+    "memorized": false
   },
   {
     "id": 3,
-    "name": "Tacos",
-    "emoji": "🌮"
+    "phrase": "Circle back",
+    "meaning": "To discuss an issue at a later time.",
+    "tag": "Business",
+    "date": "Sept 18",
+    "memorized": false
   }
 ]

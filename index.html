@@ -3,64 +3,209 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lab|delta</title>
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <title>ChunkMate | Master English Chunks</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
   </head>
-  <body>
-    <!-- Centered Container -->
-    <div class="container mt-5" style="max-width: 500px">
-      <h2 class="mb-4">Delta Lab Profile</h2>
-
-      <form id="profileForm">
-        <div class="mb-3">
-          <label for="nameInput" class="form-label">Name</label>
-          <input id="nameInput" class="form-control" />
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html"
+          ><i class="bi bi-chat-quote-fill"></i> ChunkMate</a
+        >
+        <div class="d-flex align-items-center">
+          <span class="text-light me-3"
+            ><i class="bi bi-person-circle"></i> You</span
+          >
+          <a
+            href="pages/signin.html"
+            class="btn btn-outline-light btn-sm"
+            id="nav-signin-btn"
+            >Sign In</a
+          >
         </div>
+      </div>
+    </nav>
 
-        <div class="mb-3">
-          <label for="favoriteInput" class="form-label">Favorite</label>
-          <select id="favoriteInput" class="form-select">
-            <option>Select favorite!</option>
-          </select>
-        </div>
+    <!-- Main Content -->
+    <main class="container my-5" id="main-content">
+      <!-- App Intro -->
+      <div class="text-center mb-5">
+        <h1 class="fw-bold">Master Conversational English</h1>
+        <p class="text-muted">
+          Save, track, and master the chunks you hear everyday.
+        </p>
+      </div>
 
-        <div class="mb-3">
-          <label for="commentInput" class="form-label">Comments</label>
-          <textarea id="commentInput" class="form-control"></textarea>
-        </div>
-
-        <!-- Pretty Blue Button -->
-        <button id="btnCreateProfile" class="btn btn-primary w-100">
-          Create My Profile
-        </button>
-      </form>
-
-      <!-- Result Display Section -->
-      <div
-        id="profileDisplay"
-        class="card p-4 shadow-sm"
-        style="display: none; margin-top: 20px"
+      <!-- Control Panel (Search & Filter) -->
+      <section
+        class="row mb-4 bg-white p-3 rounded shadow-sm border"
+        id="control-panel"
       >
-        <h3 class="text-center">My Profile 🐶</h3>
-        <p><strong>Name:</strong> <span id="displayName"></span></p>
-        <p><strong>Favorite ID:</strong> <span id="displayFavorite"></span></p>
-        <p><strong>Comment:</strong> <span id="displayComment"></span></p>
-        <div class="text-center">
-          <img
-            id="displayDogPic"
-            src=""
-            alt="Random Dog"
-            class="img-fluid rounded"
-            style="max-height: 250px"
-          />
+        <div class="col-md-8 mb-2 mb-md-0">
+          <div class="input-group">
+            <span class="input-group-text bg-white"
+              ><i class="bi bi-search"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control"
+              id="search-box"
+              placeholder="Search chunks or tags..."
+            />
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <button class="btn btn-outline-secondary" id="filter-btn">
+            <i class="bi bi-funnel"></i> Unmemorized Only
+          </button>
+        </div>
+      </section>
+
+      <div class="row">
+        <!-- Add New Form -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-white fw-bold">
+              <i class="bi bi-plus-circle"></i> Add New Chunk
+            </div>
+            <div class="card-body">
+              <form id="add-chunk-form">
+                <div class="mb-3">
+                  <label for="chunk-input" class="form-label"
+                    >English Phrase</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="chunk-input"
+                    placeholder="e.g., Dip out"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="meaning-input" class="form-label">Meaning</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="meaning-input"
+                    placeholder="to leave early"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="tag-input" class="form-label">Tag</label>
+                  <select class="form-select" id="tag-input">
+                    <option value="slang">Slang</option>
+                    <option value="business">Business</option>
+                    <option value="daily">Daily Life</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary w-100"
+                  id="save-chunk-btn"
+                >
+                  Save Chunk
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
 
-        <button id="btnClearSession" class="btn btn-outline-danger w-100 mt-3">
-          Clear Session
-        </button>
+        <!-- Content Cards Area -->
+        <div class="col-md-8" id="chunk-cards">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Hardcoded Card 1 -->
+            <div class="col">
+              <div class="card chunk-card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <span class="badge bg-warning text-dark mb-2">Slang</span>
+                  <h5 class="card-title fw-bold">Dip out</h5>
+                  <p class="card-text text-muted">
+                    To leave a place, usually early or suddenly.
+                  </p>
+                </div>
+                <div
+                  class="card-footer bg-white border-top-0 d-flex justify-content-between align-items-center"
+                >
+                  <small class="text-muted"
+                    ><i class="bi bi-calendar-event"></i> Sept 17</small
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="check1"
+                    />
+                    <label class="form-check-label text-success" for="check1"
+                      >Memorized</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hardcoded Card 2 -->
+            <div class="col">
+              <div class="card chunk-card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <span class="badge bg-info mb-2">Daily Life</span>
+                  <h5 class="card-title fw-bold">Call it a day</h5>
+                  <p class="card-text text-muted">
+                    To stop working on something.
+                  </p>
+                </div>
+                <div
+                  class="card-footer bg-white border-top-0 d-flex justify-content-between align-items-center"
+                >
+                  <small class="text-muted"
+                    ><i class="bi bi-calendar-event"></i> Sept 16</small
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="check2"
+                    />
+                    <label class="form-check-label text-success" for="check2"
+                      >Memorized</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast Notification (Hidden by default) -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="success-toast"
+        class="toast align-items-center text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-check-circle-fill me-2"></i> Chunk saved
+            successfully!
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
       </div>
     </div>
 
-    <script src="assets/js/script.js"></script>
+    <!-- Bootstrap JS & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/scripts/app.js"></script>
   </body>
 </html>

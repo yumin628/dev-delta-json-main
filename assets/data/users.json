@@ -1,0 +1,14 @@
+[
+  {
+    "email": "admin@una.edu",
+    "password": "password",
+    "role": "admin",
+    "name": "Admin Manager"
+  },
+  {
+    "email": "student@una.edu",
+    "password": "password",
+    "role": "user",
+    "name": "Yumin"
+  }
+]
