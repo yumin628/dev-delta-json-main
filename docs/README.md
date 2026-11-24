@@ -62,3 +62,22 @@ dev-delta/
 │       └── app.js
 └── README.md
 ```
+## ECHO Deployment
+- **GitHub Repository:** [https://github.com/yumin628/dev-delta-json-main](https://github.com/yumin628/dev-delta-json-main)
+- **GitHub Pages (Docs):** [https://yumin628.github.io/dev-delta-json-main/](https://yumin628.github.io/dev-delta-json-main/)
+- **Production App (GCP HTTPS):** [https://yumin.barrycumbie.com](https://yumin.barrycumbie.com)
+- **GCP External IP:** 34.9.197.253
+
+### Deployment Summary
+Deployed the ChunkMate (`dev|delta`) static front-end application to an existing Google Cloud Platform Debian VM served by Nginx with HTTPS (Let's Encrypt / Certbot). Replaced the previous demo files in `/var/www/html/` with the `dev-delta-json-main` repository.
+
+### Linux Commands Used
+- `rm -rf ~/app`
+- `git clone https://github.com/yumin628/dev-delta-json-main.git app`
+- `sudo rm -rf /var/www/html/*`
+- `sudo cp -a ~/app/. /var/www/html/`
+- `curl -I http://localhost`
+
+### SSH Access Verification
+- Verified direct local SSH key authentication to the GCP VM (`whoami`, `hostname`, `pwd`).
+- **Verification Issue:** [ECHO DEV: SSH Access Verified](https://github.com/yumin628/dev-delta-json-main/issues/1)
