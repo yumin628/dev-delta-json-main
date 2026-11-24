@@ -3,7 +3,7 @@
 
 ## Authorship + Version
 - **Author:** Yumin Choi
-- **Project:** dev|delta (Updated from dev|bravo)
+- **Project:** `dev|delta` (Updated from dev|bravo)
 - **Version:** 0.2
 - **Date:** 2026-11
 
